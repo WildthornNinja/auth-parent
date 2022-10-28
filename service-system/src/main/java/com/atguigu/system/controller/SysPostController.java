@@ -39,6 +39,8 @@ public class SysPostController {
                            @PathVariable Long size,
                            @ApiParam(name = "postQueryVo",value = "查询条件[查询对象]",required = false)
                                    SysPostQueryVo postQueryVo){
+        System.out.println("postQueryVo = " + postQueryVo);
+        System.out.println("postQueryVo = " + postQueryVo.getStatus());
         Page<SysPost> page = new Page<SysPost>(current,size);
         IPage<SysPost> pageModel = sysPostService.findPage(page, postQueryVo);
         return Result.ok(pageModel);

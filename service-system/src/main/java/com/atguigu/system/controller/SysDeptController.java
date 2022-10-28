@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "菜单管理")
+@Api(tags = "部门管理")
 @RestController
 @RequestMapping("/admin/system/sysDept")
 public class SysDeptController {
@@ -45,7 +45,7 @@ public class SysDeptController {
     @PreAuthorize("hasAuthority('bnt.sysDept.remove')")
     @DeleteMapping("/remove/{id}")
     public Result deleteNode(@PathVariable Long id){
-        sysDeptService.removeById(id);
+        sysDeptService.deleteEmptyNode(id);
         return Result.ok();
     }
     @ApiOperation("根据id查询节点")

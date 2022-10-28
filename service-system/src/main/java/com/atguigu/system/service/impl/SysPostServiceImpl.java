@@ -31,6 +31,9 @@ public class SysPostServiceImpl extends ServiceImpl<SysPostMapper, SysPost> impl
 
     @Override
     public IPage<SysPost> findPage(Page<SysPost> page, SysPostQueryVo postQueryVo) {
+//        if(!postQueryVo.getStatus()){
+//            postQueryVo
+//        }
         return sysPostMapper.findPage(page,postQueryVo);
     }
     /**

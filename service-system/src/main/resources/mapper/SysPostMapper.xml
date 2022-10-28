@@ -15,7 +15,7 @@
         <if test="vo.name !=null and vo.name!=''">
                 or name like CONCAT('%',#{vo.name},'%')
         </if>
-        <if test="vo.status !=null and vo.status!=''">
+        <if test="vo.status !=null ">
                 or status = #{vo.status}
         </if>
         and is_deleted = 0

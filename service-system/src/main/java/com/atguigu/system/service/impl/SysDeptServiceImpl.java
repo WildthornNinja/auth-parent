@@ -57,36 +57,4 @@ public class SysDeptServiceImpl extends ServiceImpl<SysDeptMapper, SysDept> impl
         return null;
     }
 
-//    /**
-//     * 根据角色获取部门数据
-//     * @param roleId
-//     * @return
-//     */
-//    @Override
-//    public List<SysDept> getDeptByRoleId(Long roleId) {
-//        //现获取所有的status为1的部门列表数据
-//        List<SysDept> sysDeptList = sysDeptMapper.selectList(new QueryWrapper<SysDept>().eq("status",1));
-//        //通过角色id 查询中间表 sys_role_menu ， 获取该角色已经拥有的部门数据
-//        List<SysRoleDept> sysRoleDeptList = sysRoleDeptMapper.selectList(new QueryWrapper<SysRoleDept>().eq("role_id", roleId));
-//        //通过遍历SysRoleDeptList，抽取出所有的部门id 封装成List
-//        List<Long> roleDeptIds = new ArrayList<>();
-//        for (SysRoleDept sysRoleDept : sysRoleDeptList) {
-//            roleDeptIds.add(sysRoleDept.getDeptId());
-//        }
-//        //遍历所有的部门集合将该角色所拥有的部门 select属性设为true 表示已被选中
-//        for (SysDept sysDept : sysDeptList) {
-//            if(roleDeptIds.contains(sysDept.getId())){
-//                //设置该部门【权限】已被分配
-//                sysDept.setSelect(true);
-//            }else{
-//                sysDept.setSelect(false);
-//            }
-//        }
-//        //将权部门/限列表转换为权限树
-//        List<SysDept> sysDeptTree = DeptHelper.buildTree(sysDeptList);
-//        return sysDeptTree;
-//    }
-    
-
-//    }
 }
