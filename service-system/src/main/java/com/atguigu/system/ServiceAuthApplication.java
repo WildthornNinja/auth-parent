@@ -1,0 +1,13 @@
+package com.atguigu.system;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+//@MapperScan(basePackages = "com.atguigu.system.mapper")//已在MybatisPlusConfig配置类统一配置
+@SpringBootApplication
+public class ServiceAuthApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceAuthApplication.class,args);
+    }
+}
